@@ -5,7 +5,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #171717;
     --foreground: #ededed;
   }
 }
@@ -35,8 +35,59 @@ a {
   text-decoration: none;
 }
 
+.app-shell {
+  min-height: 100vh;
+  display: block;
+}
+
+.nav-header {
+  z-index: 10;
+  height: 168px;
+  padding: 24px 48px 0px 48px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.nav-left-wrapper {
+}
+
+.nav-right-wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.nav-link-with-icon:hover {
+  opacity: 0.7;
+}
+
+.nav-link-with-icon svg {
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0; /* IMPORTANT for overflow handling */
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
   }
 }
