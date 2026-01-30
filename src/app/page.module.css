@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-geist-sans);
+  background-image: radial-gradient(circle closest-corner at 50% 0, #f2f2f226, #0000);
   background-color: var(--background);
 }
 
@@ -21,12 +22,85 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
   padding: 120px 60px;
+}
+
+.hero {
+  width: 100%;
+  margin-bottom: 64px;
+  padding: 20px 0 8px 0;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -2.2px;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.slogan::after {
+  content: '';
+  display: block;
+  width: min(320px, 60%);
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.sloganGreeting {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.sloganRest {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slogan em,
+.slogan strong {
+  font-style: normal;
+  font-weight: inherit;
+  background: linear-gradient(90deg, #111, #5b5b5b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 48px;
+  letter-spacing: -1.5px;
+}
+
+.experienceStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 72px;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
 }
 
 .intro {
@@ -93,6 +167,14 @@ a.secondary {
   border-color: var(--button-secondary-border);
 }
 
+/* ------------------ */
+.experience-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------ */
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
@@ -109,6 +191,30 @@ a.secondary {
 @media (max-width: 600px) {
   .main {
     padding: 48px 24px;
+  }
+
+  .hero {
+    margin-bottom: 40px;
+  }
+
+  .slogan {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+  }
+
+  .slogan::after {
+    width: min(220px, 70%);
+    margin-top: 14px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .recommendationsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .intro {
@@ -137,5 +243,17 @@ a.secondary {
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
+  }
+
+  .slogan::after {
+    background: linear-gradient(90deg, rgba(237, 237, 237, 0.55), rgba(237, 237, 237, 0));
+  }
+
+  .slogan em,
+  .slogan strong {
+    background: linear-gradient(90deg, #ededed, #8f8f8f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }

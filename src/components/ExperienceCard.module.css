@@ -1,0 +1,90 @@
+.card {
+  /* background: var(--foreground); */
+  /* border-radius: 12px; */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.52);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.16),
+    0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.date {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleLine {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.highlights {
+  margin: 4px 0 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.highlights li {
+  margin: 0;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.5),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .card:hover {
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.6),
+      0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+}

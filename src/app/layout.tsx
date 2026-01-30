@@ -30,10 +30,9 @@ export default function RootLayout({
           <header className="nav-header">
             <div className="nav-bar">
               <div className="nav-left-wrapper">
-                <h3>Mike Miller</h3>
+                <h3 className="derp">Mike Miller</h3>
                 <p>Software Engineer</p>
               </div>
-
               <div className="nav-right-wrapper">
                 <a
                   href="https://www.linkedin.com/in/webdevelmike"
