@@ -127,9 +127,7 @@ const ScrollImageTrack = () => {
               Snapshots
             </h2>
           </div>
-          <p className={styles.scrollTrackCopy}>
-            A quick, scroll-driven photo reel from the last few years.
-          </p>
+          <p className={styles.scrollTrackCopy}>Some recent photos of me 😎</p>
         </header>
         <div ref={viewportRef} className={styles.scrollTrackViewport} data-ready={isReady}>
           <div ref={trackRef} className={styles.scrollTrack}>
