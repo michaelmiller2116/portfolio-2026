@@ -1,0 +1,25 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Dune</title>
+  <desc>Minimal Dune cover with a desert gradient and sun.</desc>
+  <defs>
+    <linearGradient id="sand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6d79a" />
+      <stop offset="0.55" stop-color="#e6a86b" />
+      <stop offset="1" stop-color="#d07a4b" />
+    </linearGradient>
+    <linearGradient id="duneHorizon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9e7bf" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#d88a5c" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#sand)" />
+  <circle cx="480" cy="120" r="64" fill="#fef3cc" opacity="0.9" />
+  <path d="M0 280C120 230 240 260 320 240C420 210 540 200 640 230V420H0Z" fill="url(#duneHorizon)" />
+  <path d="M0 320C120 300 210 330 320 310C440 280 540 300 640 320V420H0Z" fill="#b8683a" opacity="0.5" />
+  <text x="64" y="320" fill="#3a1f11" font-size="54" font-family="Arial, sans-serif" font-weight="700" letter-spacing="6">
+    DUNE
+  </text>
+  <text x="64" y="360" fill="#3a1f11" font-size="20" font-family="Arial, sans-serif" opacity="0.8">
+    Frank Herbert
+  </text>
+</svg>

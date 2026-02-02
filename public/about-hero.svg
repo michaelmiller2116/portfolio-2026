@@ -1,0 +1,33 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9b27b" />
+      <stop offset="0.45" stop-color="#f6d0a4" />
+      <stop offset="1" stop-color="#f0efe9" />
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b1a1a" />
+      <stop offset="1" stop-color="#3e2a1f" />
+    </linearGradient>
+    <linearGradient id="valley" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#51332b" />
+      <stop offset="1" stop-color="#2a1d19" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffbf2" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#ffd6b0" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" rx="60" fill="url(#sky)" />
+  <ellipse cx="1180" cy="260" rx="300" ry="140" fill="url(#glow)" filter="url(#soft)" />
+  <path d="M0 640C220 520 420 520 640 640C820 740 980 740 1280 620C1430 560 1510 540 1600 520V1000H0V640Z" fill="url(#valley)" />
+  <path d="M0 560C220 430 460 430 740 560C940 660 1120 660 1440 520C1510 470 1560 450 1600 430V1000H0V560Z" fill="url(#ridge)" />
+  <path d="M260 420C340 360 420 340 520 360C600 380 660 430 740 500C620 520 520 540 400 560C310 520 260 470 260 420Z" fill="#2b1d18" opacity="0.8" />
+  <path d="M980 450C1120 360 1260 330 1400 360C1480 380 1540 420 1600 470V1000H960C900 780 920 640 980 450Z" fill="#3b2620" opacity="0.9" />
+  <circle cx="240" cy="180" r="90" fill="#fff6e6" opacity="0.85" />
+  <circle cx="320" cy="200" r="60" fill="#fff3e0" opacity="0.7" />
+  <path d="M0 720C180 660 340 650 520 700C700 750 880 780 1100 760C1320 740 1470 700 1600 660V1000H0V720Z" fill="#1a1411" opacity="0.8" />
+</svg>

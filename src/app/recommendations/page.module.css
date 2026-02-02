@@ -1,0 +1,93 @@
+:global(.app-shell) {
+  --page-background: #fafafa;
+}
+
+.page {
+  --background: #fafafa;
+  --foreground: #fff;
+
+  --text-primary: #000;
+  --text-secondary: #666;
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  flex-direction: column;
+  padding: 140px 60px 120px;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -1.5px;
+}
+
+.subtitle {
+  margin-top: 12px;
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-secondary);
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 120px 24px 80px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .recommendationsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(.app-shell) {
+    --page-background: #000;
+  }
+
+  .page {
+    --background: #000;
+    --foreground: #000;
+
+    --text-primary: #ededed;
+    --text-secondary: #b3b3b3;
+  }
+}
+
+:global(html[data-theme='dark']) :global(.app-shell) {
+  --page-background: #000;
+}
+
+:global(html[data-theme='dark']) .page {
+  --background: #000;
+  --foreground: #000;
+
+  --text-primary: #ededed;
+  --text-secondary: #b3b3b3;
+}

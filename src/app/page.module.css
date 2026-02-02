@@ -1,3 +1,7 @@
+:global(.app-shell) {
+  --page-background: #fafafa;
+}
+
 .page {
   --background: #fafafa;
   --foreground: #fff;
@@ -21,12 +25,224 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
   padding: 120px 60px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 80%;
+  margin-bottom: 64px;
+  padding: 20px 0 8px 0;
+}
+
+:global(.thumbnailImage) {
+  border-radius: 12px;
+  display: block;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -2.2px;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.slogan::after {
+  content: '';
+  display: block;
+  width: min(320px, 60%);
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.sloganGreeting {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.sloganRest {
+  display: block;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: sloganReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes sloganReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slogan em,
+.slogan strong {
+  font-style: normal;
+  font-weight: inherit;
+  background: linear-gradient(90deg, #111, #5b5b5b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.workSection {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.workHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 700px;
+}
+
+.workHeader :global(.section-heading) {
+  margin: 0;
+}
+
+.workEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.workSubhead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 48px;
+  letter-spacing: -1.5px;
+}
+
+.main > :global(.section-heading) {
+  margin: 48px 0;
+}
+
+.experienceHeading {
+  margin-top: 48px;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 72px;
+  --timeline-progress: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  height: calc(var(--timeline-progress) * 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.35));
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(0, 0, 0, 0.28),
+    0 0 60px rgba(0, 0, 0, 0.2);
+}
+
+.timelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: start;
+  overflow: visible;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.timelineItemVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timelineMarker {
+  grid-column: 2;
+  width: 14px;
+  height: 14px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: #050505;
+  box-shadow:
+    0 0 0 6px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 0, 0, 0.38),
+    0 0 22px rgba(0, 0, 0, 0.22);
+  justify-self: center;
+  z-index: 1;
+}
+
+.timelineContent {
+  grid-column: 3;
+  position: relative;
+  z-index: 2;
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  grid-column: 1;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
 }
 
 .intro {
@@ -93,6 +309,14 @@ a.secondary {
   border-color: var(--button-secondary-border);
 }
 
+/* ------------------ */
+.experience-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------ */
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
@@ -111,6 +335,72 @@ a.secondary {
     padding: 48px 24px;
   }
 
+  .hero {
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+
+  .slogan {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+  }
+
+  .slogan::after {
+    width: min(220px, 70%);
+    margin-top: 14px;
+  }
+
+  .workSection {
+    margin-top: 32px;
+    gap: 20px;
+  }
+
+  .workHeader {
+    gap: 10px;
+  }
+
+  .workSubhead {
+    font-size: 16px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .timeline {
+    gap: 24px;
+  }
+
+  .timeline::before,
+  .timeline::after {
+    left: 16px;
+    transform: none;
+  }
+
+  .timelineItem {
+    grid-template-columns: 24px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .timelineMarker {
+    grid-column: 1;
+    margin-top: 12px;
+  }
+
+  .timelineContent {
+    grid-column: 2;
+  }
+
+  .timelineItem:nth-child(even) .timelineContent {
+    grid-column: 2;
+  }
+
+  .recommendationsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .intro {
     gap: 16px;
   }
@@ -123,6 +413,10 @@ a.secondary {
 }
 
 @media (prefers-color-scheme: dark) {
+  :global(.app-shell) {
+    --page-background: #000;
+  }
+
   .logo {
     filter: invert();
   }
@@ -138,4 +432,96 @@ a.secondary {
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
   }
+
+  .slogan::after {
+    background: linear-gradient(90deg, rgba(237, 237, 237, 0.55), rgba(237, 237, 237, 0));
+  }
+
+  .slogan em,
+  .slogan strong {
+    background: linear-gradient(90deg, #ededed, #8f8f8f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .timeline::before {
+    background: linear-gradient(180deg, rgba(237, 237, 237, 0.28), rgba(237, 237, 237, 0.12));
+  }
+
+  .timeline::after {
+    background: linear-gradient(180deg, rgba(237, 237, 237, 0.95), rgba(237, 237, 237, 0.35));
+    box-shadow:
+      0 0 12px rgba(237, 237, 237, 0.55),
+      0 0 32px rgba(237, 237, 237, 0.35),
+      0 0 70px rgba(237, 237, 237, 0.2);
+  }
+
+  .timelineMarker {
+    background: #ffffff;
+    box-shadow:
+      0 0 0 6px rgba(237, 237, 237, 0.22),
+      0 0 12px rgba(255, 255, 255, 0.55),
+      0 0 22px rgba(255, 255, 255, 0.25);
+  }
+
+  .workSection {
+    border-top-color: rgba(237, 237, 237, 0.12);
+  }
+}
+
+:global(html[data-theme='dark']) :global(.app-shell) {
+  --page-background: #000;
+}
+
+:global(html[data-theme='dark']) .logo {
+  filter: invert();
+}
+
+:global(html[data-theme='dark']) .page {
+  --background: #000;
+  --foreground: #000;
+
+  --text-primary: #ededed;
+  --text-secondary: #999;
+
+  --button-primary-hover: #ccc;
+  --button-secondary-hover: #1a1a1a;
+  --button-secondary-border: #1a1a1a;
+}
+
+:global(html[data-theme='dark']) .slogan::after {
+  background: linear-gradient(90deg, rgba(237, 237, 237, 0.55), rgba(237, 237, 237, 0));
+}
+
+:global(html[data-theme='dark']) .slogan em,
+:global(html[data-theme='dark']) .slogan strong {
+  background: linear-gradient(90deg, #ededed, #8f8f8f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:global(html[data-theme='dark']) .timeline::before {
+  background: linear-gradient(180deg, rgba(237, 237, 237, 0.28), rgba(237, 237, 237, 0.12));
+}
+
+:global(html[data-theme='dark']) .timeline::after {
+  background: linear-gradient(180deg, rgba(237, 237, 237, 0.95), rgba(237, 237, 237, 0.35));
+  box-shadow:
+    0 0 12px rgba(237, 237, 237, 0.55),
+    0 0 32px rgba(237, 237, 237, 0.35),
+    0 0 70px rgba(237, 237, 237, 0.2);
+}
+
+:global(html[data-theme='dark']) .timelineMarker {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 6px rgba(237, 237, 237, 0.22),
+    0 0 12px rgba(255, 255, 255, 0.55),
+    0 0 22px rgba(255, 255, 255, 0.25);
+}
+
+:global(html[data-theme='dark']) .workSection {
+  border-top-color: rgba(237, 237, 237, 0.12);
 }

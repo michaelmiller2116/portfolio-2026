@@ -1,0 +1,190 @@
+.footer {
+  --footer-bg: var(--page-background, #f4f1ea);
+  --footer-ink: #1c1c1c;
+  --footer-muted: rgba(28, 28, 28, 0.6);
+  --footer-stroke: rgba(28, 28, 28, 0.12);
+  --footer-stroke-strong: rgba(28, 28, 28, 0.2);
+  --footer-card: #ffffff;
+  --footer-card-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+  --footer-chip: rgba(28, 28, 28, 0.06);
+  --footer-avatar-bg: #f0ede7;
+
+  padding: 56px 64px 72px;
+  background: var(--footer-bg);
+  font-family: var(--font-geist-sans);
+  color: var(--footer-ink);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.brandCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px 10px 12px;
+  background: var(--footer-card);
+  border-radius: 16px;
+  border: 1px solid var(--footer-stroke);
+  box-shadow: var(--footer-card-shadow);
+}
+
+.avatarWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--footer-stroke);
+  background: var(--footer-avatar-bg);
+  flex: 0 0 auto;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.1;
+}
+
+.brandName {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.brandRole {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--footer-muted);
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.navLink {
+  color: inherit;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialButton {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--footer-stroke-strong);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socialButton:hover {
+  background: var(--footer-chip);
+  border-color: rgba(28, 28, 28, 0.4);
+  transform: translateY(-1px);
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    justify-content: center;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 48px 24px 64px;
+  }
+
+  .brandCard {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    --footer-bg: var(--page-background, #161616);
+    --footer-ink: #f4f2ef;
+    --footer-muted: rgba(244, 242, 239, 0.6);
+    --footer-stroke: rgba(244, 242, 239, 0.18);
+    --footer-stroke-strong: rgba(244, 242, 239, 0.3);
+    --footer-card: rgba(24, 24, 24, 0.9);
+    --footer-card-shadow: 0 14px 26px rgba(0, 0, 0, 0.45);
+    --footer-chip: rgba(244, 242, 239, 0.08);
+    --footer-avatar-bg: rgba(255, 255, 255, 0.08);
+  }
+
+  .socialButton:hover {
+    border-color: rgba(244, 242, 239, 0.5);
+  }
+}
+
+:global(html[data-theme='dark']) .footer {
+  --footer-bg: var(--page-background, #161616);
+  --footer-ink: #f4f2ef;
+  --footer-muted: rgba(244, 242, 239, 0.6);
+  --footer-stroke: rgba(244, 242, 239, 0.18);
+  --footer-stroke-strong: rgba(244, 242, 239, 0.3);
+  --footer-card: rgba(24, 24, 24, 0.9);
+  --footer-card-shadow: 0 14px 26px rgba(0, 0, 0, 0.45);
+  --footer-chip: rgba(244, 242, 239, 0.08);
+  --footer-avatar-bg: rgba(255, 255, 255, 0.08);
+}
+
+:global(html[data-theme='dark']) .socialButton:hover {
+  border-color: rgba(244, 242, 239, 0.5);
+}
