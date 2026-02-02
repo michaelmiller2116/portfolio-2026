@@ -1,5 +1,5 @@
 .card {
-  background: var(--foreground);
+  background: var(--card, var(--card-background, #fff));
   border-radius: 12px;
   padding: 24px;
   display: flex;
@@ -7,6 +7,7 @@
   gap: 16px;
   position: relative;
   overflow: visible;
+  color: var(--ink, var(--text-primary, var(--foreground)));
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.08);
@@ -31,27 +32,27 @@
 .name {
   font-size: 18px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: inherit;
   margin: 0;
 }
 
 .company {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: inherit;
   margin: 0;
 }
 
 .title {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: inherit;
   margin: 0;
 }
 
 .recommendation {
   font-size: 15px;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: inherit;
   margin: 0;
   font-style: italic;
 }
@@ -91,6 +92,7 @@
 
 @media (prefers-color-scheme: dark) {
   .card {
+    background: var(--card, var(--card-background, #0f0f0f));
     box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.5),
       0 2px 4px rgba(0, 0, 0, 0.3);
@@ -113,6 +115,7 @@
 }
 
 :global(html[data-theme='dark']) .card {
+  background: var(--card, var(--card-background, #0f0f0f));
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.5),
     0 2px 4px rgba(0, 0, 0, 0.3);
