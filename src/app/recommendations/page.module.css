@@ -1,11 +1,4 @@
-:global(.app-shell) {
-  --page-background: #fafafa;
-}
-
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
   --text-primary: #000;
   --text-secondary: #666;
 
@@ -14,7 +7,6 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
 .main {
@@ -67,27 +59,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :global(.app-shell) {
-    --page-background: #000;
-  }
-
   .page {
-    --background: #000;
-    --foreground: #000;
-
     --text-primary: #ededed;
     --text-secondary: #b3b3b3;
   }
 }
 
-:global(html[data-theme='dark']) :global(.app-shell) {
-  --page-background: #000;
-}
-
 :global(html[data-theme='dark']) .page {
-  --background: #000;
-  --foreground: #000;
-
   --text-primary: #ededed;
   --text-secondary: #b3b3b3;
 }

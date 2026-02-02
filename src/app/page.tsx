@@ -264,8 +264,8 @@ const Home = () => {
               className="thumbnailImage"
               width={64}
               height={64}
-              alt="mike-flowers"
-              src="/flowers.jpg"
+              alt="mike-profile"
+              src="/linkedIn-profile-dev.png"
             />
             <div className="thumbnailInfoWrapper">
               <span className="thumbnailTitle">Senior Software Engineer </span>

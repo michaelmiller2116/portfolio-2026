@@ -1,9 +1,9 @@
 :global(.app-shell) {
-  --page-background: #fafafa;
+  --page-background: #f5f0ea;
 }
 
 .page {
-  --background: #fafafa;
+  --background: #f5f0ea;
   --foreground: #fff;
 
   --text-primary: #000;
@@ -41,6 +41,10 @@
 :global(.thumbnailImage) {
   border-radius: 12px;
   display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .slogan {
@@ -414,7 +418,7 @@ a.secondary {
 
 @media (prefers-color-scheme: dark) {
   :global(.app-shell) {
-    --page-background: #000;
+    --page-background: #0c0b0a;
   }
 
   .logo {
@@ -422,8 +426,8 @@ a.secondary {
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: #0c0b0a;
+    --foreground: #0c0b0a;
 
     --text-primary: #ededed;
     --text-secondary: #999;
@@ -471,7 +475,7 @@ a.secondary {
 }
 
 :global(html[data-theme='dark']) :global(.app-shell) {
-  --page-background: #000;
+  --page-background: #0c0b0a;
 }
 
 :global(html[data-theme='dark']) .logo {
@@ -479,8 +483,8 @@ a.secondary {
 }
 
 :global(html[data-theme='dark']) .page {
-  --background: #000;
-  --foreground: #000;
+  --background: #0c0b0a;
+  --foreground: #0c0b0a;
 
   --text-primary: #ededed;
   --text-secondary: #999;
