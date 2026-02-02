@@ -1,0 +1,19 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Bonsai</title>
+  <desc>Minimal bonsai tree illustration with soft gradient background.</desc>
+  <defs>
+    <linearGradient id="bonsaiBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4f2e2" />
+      <stop offset="1" stop-color="#93d3b0" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#bonsaiBg)" />
+  <rect x="210" y="290" width="220" height="50" rx="18" fill="#5b3b2e" />
+  <rect x="250" y="250" width="140" height="50" rx="12" fill="#7a4d3b" />
+  <path d="M320 250C320 210 320 190 300 160C280 130 300 110 320 120C340 130 360 110 370 90C380 70 420 70 430 100C440 130 470 120 470 150C470 190 440 210 400 210C370 210 340 220 320 250Z" fill="#2f6b4f" />
+  <path d="M320 250C310 220 280 210 260 200C240 190 230 170 240 150C250 130 280 130 300 150C320 170 340 180 360 180C390 180 400 160 420 150C440 140 470 140 480 160C490 180 480 210 450 220C420 230 380 230 350 240C335 245 330 248 320 250Z" fill="#3f8a65" />
+  <rect x="305" y="200" width="30" height="70" rx="10" fill="#7a4d3b" />
+  <text x="64" y="360" fill="#1f3f2f" font-size="30" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">
+    BONSAI
+  </text>
+</svg>

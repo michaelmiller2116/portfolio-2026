@@ -1,3 +1,7 @@
+:global(.app-shell) {
+  --page-background: #f5f0ea;
+}
+
 .page {
   --bg: #f5f0ea;
   --bg-strong: #efe4d6;
@@ -10,10 +14,6 @@
   padding: 96px 64px 120px;
   font-family: var(--font-geist-sans);
   background-color: var(--bg);
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.9), transparent 55%),
-    radial-gradient(circle at 80% 0, rgba(255, 255, 255, 0.6), transparent 45%),
-    linear-gradient(135deg, var(--bg), var(--bg-strong));
   color: var(--ink);
 }
 
@@ -75,43 +75,290 @@
   gap: 24px;
 }
 
-.actionCard {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 28px 24px;
-  border-radius: 24px;
-  background: var(--card);
-  border: 1px solid var(--stroke);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 190px;
+.aboutHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-.actionTitle {
+.aboutHeaderText {
+  max-width: 100%;
+}
+
+.aboutHeaderText :global(.section-heading) {
+  margin-bottom: 18px;
+}
+
+.aboutHeaderMedia {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.aboutHeaderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.aboutHeaderText p + p {
+  margin-top: 16px;
+}
+
+.funFacts {
+  margin-top: 24px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funFactsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.funFactsTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.funFactsUpdated {
+  margin: 12px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.funFactsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.funFactCard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.funFactMedia {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  border-radius: 24px;
+  padding: 32px;
+  background: rgba(28, 28, 28, 0.08);
+  border: 1px solid var(--stroke);
+  overflow: hidden;
+}
+
+.funFactPill {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--stroke);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.funFactImage {
+  width: min(90%, 420px);
+  height: 260px;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.75);
+  object-fit: contain;
+}
+
+.funFactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.funFactHeading {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.actionMeta {
+.funFactSubheading {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.scrollTrackSection {
+  margin: 72px auto 0;
+  max-width: 1200px;
+}
+
+.scrollTrackSticky {
+  position: sticky;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 0 40px;
+}
+
+.scrollTrackHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.scrollTrackKicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.scrollTrackTitle {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.scrollTrackCopy {
+  color: var(--muted);
+  margin: 0;
   font-size: 16px;
-  font-weight: 500;
-  color: var(--muted);
+  line-height: 1.6;
 }
 
-.actionHint {
-  font-size: 14px;
-  color: var(--muted);
+.scrollTrackViewport {
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid var(--stroke);
+  background: var(--bg-strong);
+  padding: 32px 28px;
+  position: relative;
+  z-index: 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .actionCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
-  }
+.scrollTrackViewport::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 240, 234, 0.8),
+    rgba(245, 240, 234, 0) 18%,
+    rgba(245, 240, 234, 0) 82%,
+    rgba(245, 240, 234, 0.8)
+  );
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.scrollTrackViewport[data-ready='true']::after {
+  opacity: 0.65;
+}
+
+.scrollTrack {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(420px, 1fr);
+  gap: 24px;
+  will-change: transform;
+  transition: transform 0.25s ease-out;
+}
+
+.scrollTrackControls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.scrollTrackButton {
+  pointer-events: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.45);
+  color: #1f1f1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.35;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+  z-index: 4;
+}
+
+.scrollTrackButton svg {
+  width: 22px;
+  height: 22px;
+}
+
+.scrollTrackButton:hover {
+  opacity: 0.8;
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.scrollTrackButton:disabled {
+  opacity: 0.12;
+  cursor: default;
+  box-shadow: none;
+}
+
+.scrollTrackCard {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+  border: 1px solid var(--stroke);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollTrackImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 @media (max-width: 900px) {
@@ -130,9 +377,83 @@
   .actions {
     grid-template-columns: 1fr;
   }
+
+  .funFacts {
+    margin-top: 40px;
+  }
+
+  .funFactsHeader {
+    margin-bottom: 24px;
+  }
+
+  .funFactsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .funFactMedia {
+    min-height: 260px;
+  }
+
+  .funFactImage {
+    width: min(94%, 340px);
+    height: 220px;
+    object-fit: contain;
+  }
+
+  .scrollTrackSection {
+    margin-top: 56px;
+    min-height: auto;
+  }
+
+  .scrollTrackSticky {
+    position: static;
+    padding: 24px 0 0;
+  }
+
+  .scrollTrackHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scrollTrackViewport {
+    padding: 24px 20px;
+  }
+
+  .scrollTrack {
+    grid-auto-columns: minmax(320px, 1fr);
+  }
+
+  .scrollTrackButton {
+    width: 46px;
+    height: 46px;
+  }
+
+  .scrollTrackImage {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .aboutHeader {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .aboutHeaderMedia {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutHeaderMedia {
+    max-height: 360px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
+  :global(.app-shell) {
+    --page-background: #0c0b0a;
+  }
+
   .page {
     --bg: #0c0b0a;
     --bg-strong: #1b1411;
@@ -141,4 +462,63 @@
     --card: #1f1916;
     --stroke: rgba(255, 255, 255, 0.12);
   }
+
+  .funFactMedia {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .funFactPill {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .scrollTrackViewport::after {
+    background: linear-gradient(
+      90deg,
+      rgba(12, 11, 10, 0.85),
+      rgba(12, 11, 10, 0) 20%,
+      rgba(12, 11, 10, 0) 80%,
+      rgba(12, 11, 10, 0.85)
+    );
+  }
+}
+
+:global(html[data-theme='dark']) :global(.app-shell) {
+  --page-background: #0c0b0a;
+}
+
+:global(html[data-theme='dark']) .page {
+  --bg: #0c0b0a;
+  --bg-strong: #1b1411;
+  --ink: #f4f2ef;
+  --muted: #c0b8b0;
+  --card: #1f1916;
+  --stroke: rgba(255, 255, 255, 0.12);
+}
+
+:global(html[data-theme='dark']) .funFactMedia {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:global(html[data-theme='dark']) .funFactPill {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+:global(html[data-theme='dark']) .scrollTrackViewport::after {
+  background: linear-gradient(
+    90deg,
+    rgba(12, 11, 10, 0.85),
+    rgba(12, 11, 10, 0) 20%,
+    rgba(12, 11, 10, 0) 80%,
+    rgba(12, 11, 10, 0.85)
+  );
+}
+
+:global(html[data-theme='dark']) .scrollTrackButton {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(20, 18, 16, 0.45);
+  color: #f4f2ef;
+}
+
+:global(html[data-theme='dark']) .scrollTrackButton:hover {
+  background: rgba(24, 22, 20, 0.7);
 }

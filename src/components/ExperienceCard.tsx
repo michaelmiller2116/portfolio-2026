@@ -21,8 +21,8 @@ const ExperienceCard = ({ exp }: ExperienceCardProps) => {
 
   return (
     <div className={styles.card}>
-      <h4 className={styles.company}>{company}</h4>
-      <h2 className={styles.title}>{role}</h2>
+      <p className={styles.company}>{company}</p>
+      <h3 className={styles.title}>{role}</h3>
       <div className={styles.role}>
         <p className={styles.date}>{dateRange}</p>
         {roleDetails.length > 0 ? (

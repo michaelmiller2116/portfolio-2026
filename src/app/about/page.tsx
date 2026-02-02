@@ -1,67 +1,104 @@
 import Image from 'next/image';
 import styles from './about.module.css';
+import ScrollImageTrack from './ScrollImageTrack';
 
 const AboutPage = () => {
-  const email = 'mike@example.com';
-  const emailSubject = encodeURIComponent("Let's build something delightfully weird");
-  const linkedInHandle = '@webdevelmike';
-  const linkedInUrl = 'https://www.linkedin.com/in/webdevelmike';
-  const twitterHandle = '@yourhandle';
-  const twitterUrl = 'https://twitter.com/yourhandle';
+  const funFacts = [
+    {
+      label: 'Favorite Book',
+      title: 'Dune',
+      subtitle: 'Frank Herbert',
+      image: '/dune.jpg',
+      imageAlt: 'Dune book cover',
+    },
+    {
+      label: 'Favorite Podcast',
+      title: 'Syntax FM',
+      subtitle: 'Wes Bos & Scott Tolinski',
+      image: '/syntax.jpg',
+      imageAlt: 'Syntax FM podcast cover',
+    },
+    {
+      label: 'Favorite Movie',
+      title: 'Fight Club',
+      subtitle: 'David Fincher',
+      image: '/fight-club.jpg',
+      imageAlt: 'Fight Club movie poster',
+    },
+    {
+      label: 'Active Hobby',
+      title: 'Bonsai',
+      subtitle: 'Small tree, big patience',
+      image: '/bonsai.jpeg',
+      imageAlt: 'Bonsai tree',
+    },
+  ];
 
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <p className={styles.kicker}>About</p>
-          <h1>Design-obsessed frontend engineer who ships fast.</h1>
-          <p className={styles.subhead}>
-            I build interfaces that feel crisp, human, and inevitable. If you want
-            thoughtful UX with clean, resilient code, we should probably talk.
-          </p>
-        </div>
-        <div className={styles.heroMedia}>
+      <div className={styles.aboutHeader}>
+        <section className={styles.aboutHeaderText}>
+          <h1 className="section-heading">About</h1>
+          <div>
+            <p>
+              I&apos;m a frontend engineer who enjoys turning complex problems into interfaces that
+              feel simple, fast, and reliable, basically the digital version of getting three kids
+              out the door on time.
+            </p>
+            <p>
+              I&apos;ve worked across startups and larger organizations, learning when to move
+              quickly and when to slow down and build things to last (kind of like bedtime routines
+              vs. weekend pancake experiments).
+            </p>
+            <p>
+              My path includes Galvanize, an early startup role at Manatee, a fast-moving skunkworks
+              team at Seaspan in Denver, and more recently ClickBank, where I focused on building
+              frontend systems that hold up in production. Outside of work, I’m a dad to three
+              girls, a husband, and a lifelong tinkerer—usually bouncing between IoT projects, 3D
+              printing, and trying to keep bonsai trees (and my coffee) alive.
+            </p>
+          </div>
+        </section>
+        <div className={styles.aboutHeaderMedia}>
           <Image
-            src="/about-hero.svg"
-            alt="Abstract landscape with layered gradients"
-            className={styles.heroImage}
-            fill
+            src="/flowers.jpg"
+            alt="Flowers in soft light"
+            width={760}
+            height={900}
+            className={styles.aboutHeaderImage}
             priority
-            sizes="(max-width: 900px) 100vw, 60vw"
           />
         </div>
+      </div>
+      <section id="fun-facts" className={styles.funFacts}>
+        <div className={styles.funFactsHeader}>
+          <div>
+            <h2 className="section-heading">Fun Facts</h2>
+            <p className={styles.funFactsUpdated}>Updated Feb 1, 2026</p>
+          </div>
+        </div>
+        <div className={styles.funFactsGrid}>
+          {funFacts.map((fact) => (
+            <article key={fact.label} className={styles.funFactCard}>
+              <div className={styles.funFactMedia}>
+                <span className={styles.funFactPill}>{fact.label}</span>
+                <Image
+                  src={fact.image}
+                  alt={fact.imageAlt}
+                  width={520}
+                  height={340}
+                  className={styles.funFactImage}
+                />
+              </div>
+              <div className={styles.funFactContent}>
+                <h3 className={styles.funFactHeading}>{fact.title}</h3>
+                <p className={styles.funFactSubheading}>{fact.subtitle}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
-
-      <section className={styles.actions}>
-        <a
-          className={styles.actionCard}
-          href={`mailto:${email}?subject=${emailSubject}`}
-        >
-          <div className={styles.actionTitle}>Hire me</div>
-          <div className={styles.actionMeta}>{email}</div>
-          <div className={styles.actionHint}>Send a note. I reply quickly.</div>
-        </a>
-        <a
-          className={styles.actionCard}
-          href={linkedInUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className={styles.actionTitle}>LinkedIn</div>
-          <div className={styles.actionMeta}>{linkedInHandle}</div>
-          <div className={styles.actionHint}>Let's connect professionally.</div>
-        </a>
-        <a
-          className={styles.actionCard}
-          href={twitterUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className={styles.actionTitle}>Twitter</div>
-          <div className={styles.actionMeta}>{twitterHandle}</div>
-          <div className={styles.actionHint}>Find me on the bird app.</div>
-        </a>
-      </section>
+      <ScrollImageTrack />
     </div>
   );
 };

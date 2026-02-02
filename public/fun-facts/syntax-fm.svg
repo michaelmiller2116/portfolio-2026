@@ -1,0 +1,23 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Syntax FM</title>
+  <desc>Abstract podcast cover with waveform lines and a mic icon.</desc>
+  <defs>
+    <linearGradient id="syntaxBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9f2ff" />
+      <stop offset="1" stop-color="#9fd3ff" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#syntaxBg)" />
+  <g opacity="0.35" stroke="#1a3b5d" stroke-width="10" fill="none">
+    <path d="M60 210C140 150 220 270 300 210C380 150 460 270 540 210" />
+    <path d="M60 250C140 190 220 310 300 250C380 190 460 310 540 250" />
+  </g>
+  <g fill="#1a3b5d">
+    <rect x="290" y="120" width="60" height="120" rx="30" />
+    <rect x="300" y="240" width="40" height="60" rx="20" />
+    <rect x="270" y="300" width="100" height="16" rx="8" />
+  </g>
+  <text x="64" y="360" fill="#0f2b45" font-size="36" font-family="Arial, sans-serif" font-weight="700" letter-spacing="4">
+    SYNTAX FM
+  </text>
+</svg>

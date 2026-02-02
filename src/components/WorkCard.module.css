@@ -1,0 +1,212 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 32px;
+  padding: 28px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f8f3e9 0%, #f0dfcf 50%, #f7c7b0 100%);
+  border: 1px solid rgba(16, 22, 18, 0.08);
+  box-shadow:
+    0 24px 60px rgba(19, 19, 19, 0.12),
+    0 8px 20px rgba(19, 19, 19, 0.08);
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s ease;
+  will-change: transform, opacity;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cardReverse {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+}
+
+.cardReverse .content {
+  order: 2;
+}
+
+.cardReverse .media {
+  order: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 22px;
+  color: #f5f0e8;
+  min-height: 100%;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -1.5px;
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(245, 240, 232, 0.75);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 240, 232, 0.25);
+  background: rgba(245, 240, 232, 0.12);
+  color: #f5f0e8;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 0;
+  padding: 18px;
+  border-radius: 24px;
+  justify-self: stretch;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.9), transparent 60%),
+    linear-gradient(160deg, #f7ece5, #f2d6de 55%, #f7b1c8);
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 1000px;
+  aspect-ratio: 5 / 4;
+  border-radius: 22px;
+  background: #fff7f0;
+  box-shadow:
+    0 20px 40px rgba(34, 30, 30, 0.2),
+    0 8px 18px rgba(34, 30, 30, 0.16);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+@media (max-width: 1000px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .media {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: linear-gradient(135deg, #101212 0%, #1a1f1d 55%, #242a28 100%);
+    border-color: rgba(237, 237, 237, 0.08);
+    box-shadow:
+      0 26px 70px rgba(0, 0, 0, 0.45),
+      0 10px 26px rgba(0, 0, 0, 0.32);
+  }
+
+  .content {
+    color: #f1ede6;
+  }
+
+  .description {
+    color: rgba(241, 237, 230, 0.72);
+  }
+
+  .cta {
+    border-color: rgba(241, 237, 230, 0.22);
+    background: rgba(241, 237, 230, 0.08);
+  }
+
+  .media {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 60%),
+      linear-gradient(160deg, #2b2f2d, #1b1d1c 55%, #121413);
+  }
+
+  .frame {
+    background: #1b1f1d;
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.55),
+      0 8px 18px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:global(html[data-theme='dark']) .card {
+  background: linear-gradient(135deg, #101212 0%, #1a1f1d 55%, #242a28 100%);
+  border-color: rgba(237, 237, 237, 0.08);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.45),
+    0 10px 26px rgba(0, 0, 0, 0.32);
+}
+
+:global(html[data-theme='dark']) .content {
+  color: #f1ede6;
+}
+
+:global(html[data-theme='dark']) .description {
+  color: rgba(241, 237, 230, 0.72);
+}
+
+:global(html[data-theme='dark']) .cta {
+  border-color: rgba(241, 237, 230, 0.22);
+  background: rgba(241, 237, 230, 0.08);
+}
+
+:global(html[data-theme='dark']) .media {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 60%),
+    linear-gradient(160deg, #2b2f2d, #1b1d1c 55%, #121413);
+}
+
+:global(html[data-theme='dark']) .frame {
+  background: #1b1f1d;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.55),
+    0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
