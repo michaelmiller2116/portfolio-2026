@@ -68,12 +68,12 @@
 
 @media (prefers-color-scheme: dark) {
   :global(.app-shell) {
-    --page-background: #000;
+    --page-background: #0c0b0a;
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: #0c0b0a;
+    --foreground: #0c0b0a;
 
     --text-primary: #ededed;
     --text-secondary: #b3b3b3;
@@ -81,12 +81,12 @@
 }
 
 :global(html[data-theme='dark']) :global(.app-shell) {
-  --page-background: #000;
+  --page-background: #0c0b0a;
 }
 
 :global(html[data-theme='dark']) .page {
-  --background: #000;
-  --foreground: #000;
+  --background: #0c0b0a;
+  --foreground: #0c0b0a;
 
   --text-primary: #ededed;
   --text-secondary: #b3b3b3;
