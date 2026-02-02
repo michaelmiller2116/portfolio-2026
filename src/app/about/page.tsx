@@ -53,16 +53,16 @@ const AboutPage = () => {
             <p>
               My path includes Galvanize, an early startup role at Manatee, a fast-moving skunkworks
               team at Seaspan in Denver, and more recently ClickBank, where I focused on building
-              frontend systems that hold up in production. Outside of work, I’m a dad to three
-              girls, a husband, and a lifelong tinkerer—usually bouncing between IoT projects, 3D
+              frontend systems that hold up in production. Outside of work, I&apos;m a dad to three
+              girls, a husband, and a lifelong tinkerer, usually bouncing between IoT projects, 3D
               printing, and trying to keep bonsai trees (and my coffee) alive.
             </p>
           </div>
         </section>
         <div className={styles.aboutHeaderMedia}>
           <Image
-            src="/flowers.jpg"
-            alt="Flowers in soft light"
+            src="/linkedIn-profile-dev.png"
+            alt="Mike profile"
             width={760}
             height={900}
             className={styles.aboutHeaderImage}

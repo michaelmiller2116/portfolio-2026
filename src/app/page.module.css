@@ -1,9 +1,9 @@
 :global(.app-shell) {
-  --page-background: #fafafa;
+  --page-background: #f5f0ea;
 }
 
 .page {
-  --background: #fafafa;
+  --background: #f5f0ea;
   --foreground: #fff;
 
   --text-primary: #000;
@@ -41,6 +41,10 @@
 :global(.thumbnailImage) {
   border-radius: 12px;
   display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .slogan {
