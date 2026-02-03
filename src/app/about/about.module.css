@@ -91,7 +91,7 @@
   position: relative;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--stroke);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
   background: rgba(255, 255, 255, 0.7);
 }
@@ -434,13 +434,23 @@
   }
 
   .aboutHeaderMedia {
-    max-height: 420px;
+    width: min(200px, 100%);
+    aspect-ratio: 4 / 5;
+    max-height: 260px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .aboutHeaderImage {
+    object-position: center 20%;
   }
 }
 
 @media (max-width: 700px) {
   .aboutHeaderMedia {
-    max-height: 360px;
+    width: min(170px, 100%);
+    aspect-ratio: 4 / 5;
+    max-height: 220px;
   }
 }
 
